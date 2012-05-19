@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+.nicodo                     { line-height:140%; border:solid 1px #888888; color:#222222; background-color:#ffffff; background-image:url( "images/back.gif" ); background-position:bottom; background-repeat:repeat-x; font-size:12px; width: 350px; margin-bottom:1em; }
+.nicodo .nicotitle          { background:#222222; color:#ffffff; border-bottom:solid 1px #cccccc; padding:0px 4px; text-align:left; line-height:180%; }
+.nicodo .nicotitle a        { color:#ffffff; text-decoration:none; }
+.nicodo .nicotitle a:hover  { text-decoration:none; }
+.nicodo .nicoinfo           { padding:4px 8px 0px 8px; }
+.nicodo .nicothumb          { padding:2px 8px 8px 8px; float:left; }
+.nicodo .nicodetail         { padding:2px 8px 8px 8px; margin-left:90px; word-break:break-all; }
+.nicodo .nicodetail a       { color:#2970A6; text-decoration:none; }
+.nicodo .nicodetail a:hover { text-decoration:underline; }
+.nicodo .nicothumb img      { width:80px; height:60px; border:solid 2px #333; }
+.nicodo .nicomment          { padding:2px 8px 8px 8px; clear:both; }
+.nicodo .nicomment .res     { font-weight:bold; background-color:#ffffff; border:solid 2px #888888; padding:8px;  }
+
+/* for ver.1.0 */
+#nicodo table      { border:solid 1px #888888; background-color:#f4f4f4; font-size:12px; width: 25em; border-collapse: collapse; }
+#nicodo th         { background:#222222; color:#ffffff; border:none; padding:0px 4px; text-align:left; line-height:180%;}
+#nicodo td         { border:none; padding:2px 4px; line-height:140%; }
+#nicodo .counter   { white-space: nowrap; }
+#nicodo .res       { background-color:#ffffff; border:solid 2px #aaaaaa; padding:4px; margin:4px; }
+#nicodo th a       { color:#ffffff; text-decoration:none; }
+#nicodo th a:hover { text-decoration:none; }
+#nicodo a          { color:#2970A6; text-decoration:none; }
+#nicodo a:hover    { text-decoration:underline; }
+#nicodo img        { width:80px; height:60px; border:solid 2px #333; }

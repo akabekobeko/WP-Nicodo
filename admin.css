@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+#nicodo table    { background:#FFF; border:2px solid #CCC; border-collapse:collapse; }
+#nicodo th,
+#nicodo td       { border:1px solid #CCC; padding:3px 10px; text-align:left; vertical-align:top; }
+#nicodo th       { background:#EDEFF0; }
+#nicodo fieldset { border-style: solid; border-width: 1px; border-color: #aaaaaa; margin:0em 2em 0em 0em; padding:1em; }
+#nicodo legend   { font-weight:bold; font-size:120%; }
+
