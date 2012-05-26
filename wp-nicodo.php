@@ -4,7 +4,7 @@ Plugin Name: WP-Nicodo
 Plugin URI: http://akabeko.me/blog/software/wp-nicodo/
 Description: ニコニコ動画のコンテンツ情報をページに埋め込みます。
 Description: Add NICO NICO DOUGA content to your posts and pages.
-Version: 1.0
+Version: 1.2
 Author: Akabeko
 Author URI: http://akabeko.me/
 */

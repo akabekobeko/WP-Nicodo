@@ -12,15 +12,3 @@
 .nicodo .nicothumb img      { width:80px; height:60px; border:solid 2px #333; }
 .nicodo .nicomment          { padding:2px 8px 8px 8px; clear:both; }
 .nicodo .nicomment .res     { font-weight:bold; background-color:#ffffff; border:solid 2px #888888; padding:8px;  }
-
-/* for ver.1.0 */
-#nicodo table      { border:solid 1px #888888; background-color:#f4f4f4; font-size:12px; width: 25em; border-collapse: collapse; }
-#nicodo th         { background:#222222; color:#ffffff; border:none; padding:0px 4px; text-align:left; line-height:180%;}
-#nicodo td         { border:none; padding:2px 4px; line-height:140%; }
-#nicodo .counter   { white-space: nowrap; }
-#nicodo .res       { background-color:#ffffff; border:solid 2px #aaaaaa; padding:4px; margin:4px; }
-#nicodo th a       { color:#ffffff; text-decoration:none; }
-#nicodo th a:hover { text-decoration:none; }
-#nicodo a          { color:#2970A6; text-decoration:none; }
-#nicodo a:hover    { text-decoration:underline; }
-#nicodo img        { width:80px; height:60px; border:solid 2px #333; }
