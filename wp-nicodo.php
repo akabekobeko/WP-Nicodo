@@ -51,7 +51,7 @@ class WpNicodo
 	 */
 	public function __construct()
 	{
-		$this->pluginDirUrl = WP_PLUGIN_URL . "/" . array_pop( explode( DIRECTORY_SEPARATOR, dirname( __FILE__ ) ) ) . "/";
+		$this->pluginDirUrl = $this->getPluginDirURL();
 		$this->options      = $this->getOption();
 
 		// ハンドラの登録
@@ -68,6 +68,18 @@ class WpNicodo
 			add_shortcode( "nicodo", array( &$this, "onExecuteShortCode" ) );
 		}
 	}
+
+    /**
+      * Get the URL of this plug-in.
+      *
+      * @return URL.
+      */
+    private function getPluginDirURL()
+    {
+        $dirs = explode( DIRECTORY_SEPARATOR, dirname( __FILE__ ) );
+        $dir  = array_pop( $dirs ) . "/";
+        return  WP_PLUGIN_URL . '/' . $dir;
+    }
 
 	/**
 	 * クイック タグ ボタンを追加可能な状態である事を調べます。
@@ -272,7 +284,7 @@ class WpNicodo
 	public function onAdminMenu()
 	{
 		// オプションページの追加
-		add_options_page( "WP-Nicodo の設定", "WP-Nicodo", 8, basename(__FILE__), array( &$this, "onOptionPage" ) ) ;
+		add_options_page( "WP-Nicodo の設定", "WP-Nicodo", 'level_8', basename(__FILE__), array( &$this, "onOptionPage" ) ) ;
 	}
 
 	/**
@@ -341,7 +353,7 @@ class WpNicodo
 			"height" => ( isset( $this->options[ "height" ] ) ?  $this->options[ "height" ] : "360" ),
 
 			// CSS の使用するチェック ボックスの選択状態
-			"use_css" => ( $this->options[ "use_css" ] == "true" ? $checked : "" )
+			"use_css" => ( isset( $this->options[ "use_css" ] ) && $this->options[ "use_css" ] == 'true' ? $checked : '' )
 		);
 
 		switch( $this->options[ "display" ] )
@@ -398,9 +410,9 @@ class WpNicodo
 				ニコニコ動画を記事やページに貼り付ける時の表示方法を設定します。
 				</p>
 				<ul>
-					<li><input type="radio" name="display" id="displayDefault" value="default" <?php echo $info[ "radio_default" ]; ?> /><label for="displayDefault">ニコニコ動画の標準フレーム ( デフォルト )</label></li>
-					<li><input type="radio" name="display" id="displayTemplate" value="template" <?php echo $info[ "radio_template" ]; ?> /><label for="displayTemplate">テンプレート</label></li>
-					<li><input type="radio" name="display" id="displayPlayer" value="player" <?php echo $info[ "radio_player" ]; ?> /><label for="displayPlayer">ニコニコ外部プレイヤー</label></li>
+					<li><input type="radio" name="display" id="displayDefault" value="default" <?php echo isset( $info[ "radio_default" ] ) ? $info[ "radio_default" ] : ''; ?> /><label for="displayDefault">ニコニコ動画の標準フレーム ( デフォルト )</label></li>
+					<li><input type="radio" name="display" id="displayTemplate" value="template" <?php echo isset( $info[ "radio_template" ] ) ? $info[ "radio_template" ] : ''; ?> /><label for="displayTemplate">テンプレート</label></li>
+					<li><input type="radio" name="display" id="displayPlayer" value="player" <?php echo isset( $info[ "radio_player" ] ) ? $info[ "radio_player" ] : ''; ?> /><label for="displayPlayer">ニコニコ外部プレイヤー</label></li>
 				</ul>
 			</fieldset>
 			<fieldset>
@@ -481,7 +493,7 @@ class WpNicodo
 	 */
 	public function onWpHead()
 	{
-		if( $this->options[ "use_css" ] == "true" )
+		if( isset( $this->options[ 'use_css' ] ) && $this->options[ 'use_css' ] == 'true' )
 		{
 			echo '<link rel="stylesheet" href="' . $this->options[ "css" ] . '" type="text/css" media="screen" />';
 		}
@@ -489,20 +501,20 @@ class WpNicodo
 }
 
 // プラグインのインスタンス生成
-if( class_exists( WpNicodo ) )
+if( class_exists( 'WpNicodo' ) )
 {
 	$wpnicodo = new WpNicodo();
 }
 
 // アンインストール時のハンドラ登録
-if( function_exists( register_uninstall_hook ) )
+if( function_exists( 'register_uninstall_hook' ) )
 {
 	/**
 	 * プラグインのアンインストールが行われる時に発生します。
 	 */
 	function onWpNicodoUninstall()
 	{
-		if( class_exists( WpNicodo ) )
+		if( class_exists( 'WpNicodo' ) )
 		{
 			delete_option( WpNicodo::OPTION_NAME );
 		}
