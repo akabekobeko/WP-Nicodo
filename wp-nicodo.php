@@ -9,7 +9,7 @@ Author: Akabeko
 Author URI: http://akabeko.me/
 */
 
-/*  Copyright 2009 - 2012 Akabeko
+/*  Copyright 2009 - 2013 Akabeko
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -184,9 +184,9 @@ class WpNicodo
 		$newTemplate = str_replace( "[thumb_type]",     $xml->thumb->thumb_type,    $newTemplate );
 
 		// 数値は千の位ごとにカンマを付ける
-		$newTemplate = str_replace( "[view_counter]",   number_format( $xml->thumb->view_counter ),   $newTemplate );
-		$newTemplate = str_replace( "[comment_num]",    number_format( $xml->thumb->comment_num ),    $newTemplate );
-		$newTemplate = str_replace( "[mylist_counter]", number_format( $xml->thumb->mylist_counter ), $newTemplate );
+		$newTemplate = str_replace( "[view_counter]",   number_format( ( int )$xml->thumb->view_counter ),   $newTemplate );
+		$newTemplate = str_replace( "[comment_num]",    number_format( ( int )$xml->thumb->comment_num ),    $newTemplate );
+		$newTemplate = str_replace( "[mylist_counter]", number_format( ( int )$xml->thumb->mylist_counter ), $newTemplate );
 
 		// 日時は yyyy/mm/dd hh:ss 形式に変換 ( iframe 版の場合、年が 2 桁だが、分かりにくいので 4 桁にしておく )
 		$newTemplate = str_replace( "[first_retrieve]", date( "Y/m/d H:i", strtotime( $xml->thumb->first_retrieve ) ),  $newTemplate );
