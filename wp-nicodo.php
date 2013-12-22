@@ -266,7 +266,7 @@ class WpNicodo
 	{
 		if( $this->canAddQuickTagButton() )
 		{
-			echo '<script type="text/javascript" src="' . $this->pluginDirUrl . 'js/quicktag.js"></script>';
+			echo '<script type="text/javascript" src="' . $this->pluginDirUrl . 'quicktag.js"></script>';
 		}
 	}
 
@@ -335,7 +335,7 @@ class WpNicodo
 	 */
 	function onMceExternalPlugins( $plugins )
 	{
-		$plugins[ "NicodoButtons" ] = "{$this->pluginDirUrl}js/mce.js";
+		$plugins[ "NicodoButtons" ] = "{$this->pluginDirUrl}mce.js";
 		return $plugins;
 	}
 

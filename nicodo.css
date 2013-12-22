@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-.nicodo                     { line-height:140%; border:solid 1px #888888; color:#222222; background-color:#ffffff; background-image:url( "images/back.gif" ); background-position:bottom; background-repeat:repeat-x; font-size:12px; width: 350px; margin-bottom:1em; }
+.nicodo                     { line-height:140%; border:solid 1px #888888; color:#222222; background-color:#ffffff; background-image:url( "back.gif" ); background-position:bottom; background-repeat:repeat-x; font-size:12px; width: 350px; margin-bottom:1em; }
 .nicodo .nicotitle          { background:#222222; color:#ffffff; border-bottom:solid 1px #cccccc; padding:0px 4px; text-align:left; line-height:180%; }
 .nicodo .nicotitle a        { color:#ffffff; text-decoration:none; }
 .nicodo .nicotitle a:hover  { text-decoration:none; }

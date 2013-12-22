@@ -9,7 +9,7 @@
 	{
 		getInfo : function()
 		{
-			return { longname:"WP-Nicodo Button", author: "Akabeko", authorurl: "http://akabeko.sakura.ne.jp/", infourl: "http://akabeko.sakura.ne.jp/blog/software/wp-nicodo/", version: "1.0" };
+			return { longname:"WP-Nicodo Button", author: "Akabeko", authorurl: "http://akabeko.me/", infourl: "http://akabeko.me/blog/software/wp-nicodo/", version: "1.2" };
 		},
 
 		init : function( ed, url )
@@ -25,7 +25,7 @@
 				ed.execCommand( "mceInsertContent", false, str );
 			});
 
-			ed.addButton( id, { title: "ニコニコ動画", cmd: id, image : url + "/../images/button.gif" });
+			ed.addButton( id, { title: "ニコニコ動画", cmd: id, image : url + "button.gif" });
 		},
 
 		_SampleTable : function( d, fmt )
