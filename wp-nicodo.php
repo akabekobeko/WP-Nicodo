@@ -57,10 +57,10 @@ class WpNicodo
         // ハンドラの登録
         if( is_admin() )
         {
-            add_action( "admin_head",   array( &$this, "onAdminHead"      ) );
-            add_action( "admin_menu",   array( &$this, "onAdminMenu"      ) );
-            add_action( "init",         array( &$this, "onMceInitButtons" ) );
-            add_filter( "admin_footer", array( &$this, "onAdminFooter"    ) );
+            add_action( "admin_head",                 array( &$this, "onAdminHead"      ) );
+            add_action( "admin_menu",                 array( &$this, "onAdminMenu"      ) );
+            add_action( "init",                       array( &$this, "onMceInitButtons" ) );
+            add_action( "admin_print_footer_scripts", array( &$this, "onAdminFooter"    ) );
         }
         else
         {
